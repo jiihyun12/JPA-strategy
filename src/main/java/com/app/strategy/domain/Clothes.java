@@ -1,6 +1,9 @@
 package com.app.strategy.domain;
 
-import jakarta.persistence.*;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import jakarta.persistence.PrimaryKeyJoinColumn;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,10 +13,9 @@ import lombok.Setter;
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor
 @DiscriminatorValue("C")
-@PrimaryKeyJoinColumn(name = "CLOTHES_ID") // FK 이자 PK
-public class Clothes extends Product {
+@PrimaryKeyJoinColumn(name = "CLOTHES_ID") // PK - FK
+public class Clothes extends Product{
 
     private Integer clothesSize;
-    private String clothColor;
-
+    private String clothesColor;
 }
